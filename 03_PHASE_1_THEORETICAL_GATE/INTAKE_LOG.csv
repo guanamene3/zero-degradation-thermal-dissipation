@@ -1,0 +1,2 @@
+submission_id,team_name,intake_date,mechanism_type,mesh_elements,modeled_tj_c,modeled_rth,compliance_pass,phase_1_score,advance_to_phase_2
+BENCHMARK_REF,Reference Standard,2026-09-20,Diamond Spreader Baseline,1850000,78.2,0.058,TRUE,72.0,FALSE
