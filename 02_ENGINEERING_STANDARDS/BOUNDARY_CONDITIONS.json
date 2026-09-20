@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "challenge_id": "MOONSHOT-01",
+  "project_title": "Zero-Degradation Kinetic Thermal Dissipation",
+  "version": "1.0.0",
+  "last_updated": "2026-09-20",
+  "units_system": "SI",
+  "geometric_envelope": {
+    "reference_cad": "02_ENGINEERING_STANDARDS/SEMICONDUCTOR_FOOTPRINT_ENVELOPE.step",
+    "contact_face_x_mm": 10.0,
+    "contact_face_y_mm": 10.0,
+    "contact_area_cm2": 1.0,
+    "max_stack_height_target_mm": 3.0,
+    "max_stack_height_threshold_mm": 4.5
+  },
+  "thermal_loads": {
+    "nominal_operating_flux_w_cm2": 1200.0,
+    "total_input_power_w": 120.0,
+    "minimum_acceptable_flux_w_cm2": 1000.0,
+    "heat_flux_distribution": "uniform_planar",
+    "interface_plane": "Z = 0.0 mm"
+  },
+  "environmental_conditions": {
+    "nominal_ambient_temp_c": 25.0,
+    "stress_ambient_temp_c": 40.0,
+    "ambient_pressure_kpa": 101.325,
+    "gravity_vector_m_s2": [0.0, 0.0, -9.81],
+    "convective_heat_transfer": {
+      "mode": "forced_air_or_passive_convection",
+      "sink_surface_heat_transfer_coefficient_w_m2_k": {
+        "forced_air_reference": 150.0,
+        "natural_convection_reference": 25.0
+      }
+    }
+  },
+  "performance_pass_criteria": {
+    "max_junction_temp_nominal_c": 65.0,
+    "max_junction_temp_stress_c": 75.0,
+    "max_surface_gradient_delta_t_c": 5.0,
+    "max_thermal_resistance_k_cm2_w": 0.030,
+    "absolute_max_thermal_resistance_threshold": 0.050
+  },
+  "simulation_convergence_standards": {
+    "energy_equation_residual_limit": 1e-6,
+    "momentum_equation_residual_limit": 1e-5,
+    "continuity_equation_residual_limit": 1e-5,
+    "grid_convergence_index_gci_max_percent": 1.5,
+    "required_mesh_independence_runs": 3
+  },
+  "prohibited_materials": [
+    "PFAS (Per- and polyfluoroalkyl substances)",
+    "PFOA (Perfluorooctanoic acid)",
+    "Ozone-depleting chlorofluorocarbons",
+    "Toxic volatile organic compounds (VOCs)",
+    "Pressurized flammable hydrocarbons"
+  ]
+}
